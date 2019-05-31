@@ -6,6 +6,10 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { PreviewComponent } from './preview/preview.component';
 import { UrlInputComponent } from './url-input/url-input.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +21,11 @@ import { UrlInputComponent } from './url-input/url-input.component';
     BrowserModule,
     CommonModule,
     FormsModule,
+    BrowserAnimationsModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
