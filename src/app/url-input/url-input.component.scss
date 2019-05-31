@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,500i&display=swap');
+
+@mixin placeholder-font($font-family) {
+  .mainLoginInput::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: $font-family;
+    opacity: 1; /* Firefox */
+  }
+
+  .mainLoginInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: $font-family;
+  }
+
+  .mainLoginInput::-ms-input-placeholder { /* Microsoft Edge */
+    font-family: $font-family;
+  }
+}
+
+:host {
+  display: block;
+  padding-top: 30vh;
+}
+
+input {
+  $font-family: 'Montserrat', sans-serif;
+
+  border: none;
+  font-size: 10rem;
+  outline: none;
+
+  font-family: $font-family;
+
+  @include placeholder-font($font-family);
+}
+
