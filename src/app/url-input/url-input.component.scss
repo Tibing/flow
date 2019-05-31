@@ -17,7 +17,6 @@
 
 :host {
   display: block;
-  padding-top: 30vh;
 }
 
 input {
@@ -26,9 +25,16 @@ input {
   border: none;
   font-size: 10rem;
   outline: none;
+  margin-top: 30vh;
 
   font-family: $font-family;
+
+  transition: all 0.3s;
 
   @include placeholder-font($font-family);
 }
 
+input.folded {
+  font-size: inherit;
+  margin-top: 0;
+}

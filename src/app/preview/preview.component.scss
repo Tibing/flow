@@ -1,0 +1,15 @@
+iframe {
+  border: none;
+  width: 100vw;
+
+  opacity: 0;
+  display: none;
+
+  transition: all 0.3s;
+}
+
+iframe.shown {
+  display: block;
+  opacity: 1;
+  height: 100vh;
+}
