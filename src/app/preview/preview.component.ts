@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 import { UrlStateService } from '../url-state.service';
 
@@ -15,7 +15,7 @@ import { UrlStateService } from '../url-state.service';
 })
 export class PreviewComponent {
   url$: Observable<SafeResourceUrl> = this.urlState.url$.pipe(
-    map((url: string) => 'https://' + url),
+    filter(url => !!url),
     map((url: string) => this.sanitizer.bypassSecurityTrustResourceUrl(url)),
   );
 
