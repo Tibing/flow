@@ -11,7 +11,8 @@ import { PreviewComponent } from './preview/preview.component';
 import { UrlInputComponent } from './url-input/url-input.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { StepsComponent } from './actions/steps.component';
+import { StepsComponent } from './steps/steps.component';
+import { StepsLibComponent } from './steps-lib/steps-lib.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { StepsComponent } from './actions/steps.component';
     UrlInputComponent,
     SidebarComponent,
     StepsComponent,
+    StepsLibComponent,
   ],
   imports: [
     BrowserModule,

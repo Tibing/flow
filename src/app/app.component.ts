@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { UrlStateService } from './url-state.service';
+import { UrlStateService } from './state/url-state.service';
 
 @Component({
   selector: 'tf-root',

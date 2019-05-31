@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { UrlStateService } from '../url-state.service';
+import { UrlStateService } from '../state/url-state.service';
 
 @Component({
   selector: 'tf-url-input',

@@ -3,7 +3,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
-import { UrlStateService } from '../url-state.service';
+import { UrlStateService } from '../state/url-state.service';
 
 @Component({
   selector: 'tf-preview',
