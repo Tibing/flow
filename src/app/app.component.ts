@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { UrlStateService } from './url-state.service';
 
 @Component({
   selector: 'tf-root',
@@ -6,4 +9,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  urlExist$: Observable<boolean> = this.urlState.urlExist$;
+
+  constructor(private urlState: UrlStateService) {
+  }
 }

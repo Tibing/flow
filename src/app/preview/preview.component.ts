@@ -9,7 +9,7 @@ import { UrlStateService } from '../url-state.service';
   selector: 'tf-preview',
   styleUrls: ['./preview.component.scss'],
   template: `
-    <iframe [src]="url$ | async" (load)="show()" [class.shown]="loaded"></iframe>
+    <iframe *ngIf="url$ | async" [src]="url$ | async"></iframe>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -19,13 +19,7 @@ export class PreviewComponent {
     map((url: string) => this.sanitizer.bypassSecurityTrustResourceUrl(url)),
   );
 
-  loaded = false;
-
   constructor(private urlState: UrlStateService,
               private sanitizer: DomSanitizer) {
-  }
-
-  show() {
-    this.loaded = true;
   }
 }

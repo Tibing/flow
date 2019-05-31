@@ -4,9 +4,11 @@
 
     <tf-url-input></tf-url-input>
     <tf-preview></tf-preview>
-    
+
   </nb-layout-column>
 
-  <nb-sidebar right></nb-sidebar>
+  <nb-sidebar right *ngIf="urlExist$ | async">
+    <tf-sidebar></tf-sidebar>
+  </nb-sidebar>
 
 </nb-layout>
