@@ -26,10 +26,6 @@ export const stepsLib: StepDefinition[] = [
     id: 'click',
     title: 'Click',
   },
-  {
-    id: 'send-keys',
-    title: 'Send Keys',
-  },
 ];
 
 @Injectable({ providedIn: 'root' })

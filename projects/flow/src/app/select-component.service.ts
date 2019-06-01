@@ -21,9 +21,10 @@ export class SelectComponentService {
   select(): Observable<string> {
     return this.frameWindow$.pipe(
       tap((frameWindow: Window) => frameWindow.postMessage({ action: 'setup' }, '*')),
-      mergeMap((frameWindow: Window) => fromEvent(this.window, 'message')),
+      mergeMap(() => fromEvent(this.window, 'message')),
       map((message: any) => message.data),
       filter(({ action }) => action === 'select-complete'),
+      map(({ data }) => data),
       take(1),
     );
   }
