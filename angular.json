@@ -146,7 +146,9 @@
             "styles": [
               "projects/example/src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "projects/client/client.js"
+            ]
           },
           "configurations": {
             "production": {
