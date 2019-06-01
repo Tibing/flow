@@ -5,7 +5,7 @@ import { Step, StepStateService } from '../state/step-state.service';
 import { SidebarStateService } from '../state/sidebar-state.service';
 
 @Component({
-  selector: 'tf-steps',
+  selector: 'f-steps',
   templateUrl: './steps.component.html',
   styleUrls: ['./steps.component.scss'],
 })

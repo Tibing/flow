@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'tf-step-config',
+  selector: 'f-step-config',
   templateUrl: './step-config.component.html',
   styleUrls: ['./step-config.component.scss'],
 })

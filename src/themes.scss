@@ -1,9 +1,0 @@
-@import '~@nebular/theme/styles/theming';
-@import '~@nebular/theme/styles/themes/default';
-
-$nb-themes: nb-register-theme((
-  layout-padding: 0,
-  layout-background-color: color-basic-100,
-  sidebar-width: 400px,
-  sidebar-shadow: none
-), default, default);

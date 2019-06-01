@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { UrlStateService } from '../state/url-state.service';
 
 @Component({
-  selector: 'tf-url-input',
+  selector: 'f-url-input',
   styleUrls: ['./url-input.component.scss'],
   templateUrl: './url-input.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

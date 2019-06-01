@@ -7,7 +7,7 @@ import { UrlStateService } from '../state/url-state.service';
 import { NB_WINDOW } from '@nebular/theme';
 
 @Component({
-  selector: 'tf-preview',
+  selector: 'f-preview',
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['./preview.component.scss'],
   template: `

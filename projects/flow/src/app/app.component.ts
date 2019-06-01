@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { UrlStateService } from './state/url-state.service';
 
 @Component({
-  selector: 'tf-root',
+  selector: 'f-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
