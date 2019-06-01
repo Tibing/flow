@@ -32,23 +32,32 @@ const getElementByXpath = path => {
     .singleNodeValue;
 };
 
-window.addEventListener('message', () => {
-  document.onmouseover = (e) => {
-    clearPrevHighlighted();
-    highlight(e);
-  };
+const mouseover = (e) => {
+  clearPrevHighlighted();
+  highlight(e);
+};
 
-  document.addEventListener('click', (e) => {
-    const path = getPathTo(e.target);
-    console.log(path);
-    console.log(getElementByXpath(path));
-    console.log(e.currentTarget);
+const click = (e) => {
+  const path = getPathTo(e.target);
 
-    e.preventDefault();
-    e.stopImmediatePropagation();
+  e.preventDefault();
+  e.stopImmediatePropagation();
 
-    parent.postMessage({ action: 'xpath', data: path }, '*');
-  }, { capture: true });
+  parent.postMessage({ action: 'select-complete', data: path }, '*');
+
+  document.removeEventListener('mouseover', mouseover);
+  document.removeEventListener('click', click, { capture: true });
+  clearPrevHighlighted();
+};
+
+window.addEventListener('message', (e) => {
+  const { data } = e;
+  const { action } = data;
+
+  if (action === 'setup') {
+    document.addEventListener('mouseover', mouseover);
+    document.addEventListener('click', click, { capture: true });
+  }
 });
 
 

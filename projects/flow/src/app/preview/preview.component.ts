@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { fromEvent, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 
 import { UrlStateService } from '../state/url-state.service';
-import { NB_WINDOW } from '@nebular/theme';
+import { SelectComponentService } from '../select-component.service';
 
 @Component({
   selector: 'f-preview',
@@ -20,24 +20,12 @@ export class PreviewComponent {
     map((url: string) => this.sanitizer.bypassSecurityTrustResourceUrl(url)),
   );
 
-  private window: Window;
-
   constructor(private urlState: UrlStateService,
               private sanitizer: DomSanitizer,
-              @Inject(NB_WINDOW) window) {
-    this.window = window;
+              private selectComponentService: SelectComponentService) {
   }
 
   onload(iframe: HTMLIFrameElement) {
-    iframe.contentWindow.postMessage({ action: 'setup' }, '*');
-
-    fromEvent(this.window, 'message')
-      .pipe(
-        map((message: any) => message.data),
-        filter(({ action }) => !!action),
-      )
-      .subscribe(data => {
-        console.log(data);
-      });
+    this.selectComponentService.setIframe(iframe.contentWindow);
   }
 }

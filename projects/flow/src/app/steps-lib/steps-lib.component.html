@@ -6,4 +6,9 @@
   </button>
 </header>
 
+<nb-list>
+  <nb-list-item *ngFor="let step of steps" (click)="add(step)">
+    {{ step.title }}
+  </nb-list-item>
+</nb-list>
 
