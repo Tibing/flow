@@ -1,13 +1,13 @@
 <header>
   <h2>Choose next step</h2>
 
-  <button nbButton appearance="ghost" (click)="openSteps()">
+  <a nbButton appearance="ghost" routerLink="/steps">
     <nb-icon icon="arrow-back"></nb-icon>
-  </button>
+  </a>
 </header>
 
 <nb-list>
-  <nb-list-item *ngFor="let step of steps" (click)="add(step)">
+  <nb-list-item *ngFor="let step of steps" [routerLink]="['/step-config', step.id]">
     {{ step.title }}
   </nb-list-item>
 </nb-list>

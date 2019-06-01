@@ -1,2 +1,5 @@
-<f-steps *ngIf="!(libOpened$ | async)"></f-steps>
-<f-steps-lib *ngIf="libOpened$ | async"></f-steps-lib>
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<button nbButton>Get spec</button>

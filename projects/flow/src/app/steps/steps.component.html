@@ -1,13 +1,13 @@
 <header>
   <h2>Steps</h2>
 
-  <button nbButton appearance="ghost" (click)="openLib()">
+  <a nbButton appearance="ghost" routerLink="/steps-lib">
     <nb-icon icon="plus"></nb-icon>
-  </button>
+  </a>
 </header>
 
 <nb-list>
   <nb-list-item *ngFor="let step of steps$ | async">
-    {{step.title}}
+    {{step.definition.title}}
   </nb-list-item>
 </nb-list>
