@@ -26,7 +26,7 @@ const stepTemplate = (step: Step) => {
 };
 
 const select = (xpath: string) => {
-  return `element(by.xpath(${xpath}))`;
+  return `element(by.xpath('${xpath}'))`;
 };
 
 const click = (element: string) => {
