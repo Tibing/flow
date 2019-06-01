@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { StepsComponent } from './steps/steps.component';
 import { StepsLibComponent } from './steps-lib/steps-lib.component';
+import { StepConfigComponent } from './step-config/step-config.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { StepsLibComponent } from './steps-lib/steps-lib.component';
     SidebarComponent,
     StepsComponent,
     StepsLibComponent,
+    StepConfigComponent,
   ],
   imports: [
     BrowserModule,

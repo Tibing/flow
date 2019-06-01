@@ -8,6 +8,14 @@ const mockSteps = [
   { title: 'Some other step' },
 ];
 
+export const stepsLib = [
+  'Click',
+  'Hover',
+  'Focus',
+  'Type',
+  'Scroll',
+];
+
 export interface Step {
   title: string;
 }
